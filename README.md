@@ -6,5 +6,7 @@ Here you will find some sample projects that I have created in my free time or d
 These are designed to be simple and to be read by everyone.
 
 Projects I suggest viewing
+
 1.) Association Analysis
+
 2.) NFL Draft 
