@@ -17,7 +17,7 @@ SELECT TOP (1000)    --Quick overview
       ,[Selection]
   FROM [MFL].[dbo].Draft6_15
 
-EXEC sp_RENAME 'mfl.dbo.draft6_15.[Draft Results For 1R DynastyPick]' , 'Pick', 'COLUMN' --Rename the first column ot 'Pick'
+EXEC sp_RENAME 'mfl.dbo.draft6_15.[Draft Results For 1R DynastyPick]' , 'Pick', 'COLUMN' --Rename the first column to 'Pick'
   
  /*The web scraper grabs some extra data, lets clear those rows*/
 
