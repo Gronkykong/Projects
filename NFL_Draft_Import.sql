@@ -28,7 +28,7 @@ EXEC sp_RENAME 'mfl.dbo.draft6_15.[Draft Results For 1R DynastyPick]' , 'Pick', 
 
  /*Rookie players have an (R) next to their name, lets remove this and make it its own column*/
  Alter table Draft6_15
- Add IsRookie INT(1)                          --Creating IsRookie column. 1 = rookie 0 = not rookie
+ Add IsRookie nvarchar(1)                          --Creating IsRookie column. 1 = rookie 0 = not rookie
  
  Update Draft6_15                                -- Initializing by setting all to 0 
  Set IsRookie = '0'
