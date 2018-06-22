@@ -1,6 +1,6 @@
 ﻿/*
-This a simple example of a data import and conversion using T-SQL with some analysis mixed in. The data comes from a football mock draft made up of 96 teams 
-and 1000's of players. Each player has 8 duplicates to be drafted  Data was captured using a web scraping script and 
+This a simple example of a data import and conversion using T-SQL with some analysis mixed in. The data comes from a football mock
+drafts with each plaer being selected 8 times. Data was captured using a web scraping script and 
 imported via SQL server integration services
 
 Notes:
@@ -59,7 +59,7 @@ EXEC sp_RENAME 'mfl.dbo.draft6_15.[Draft Results For 1R DynastyPick]' , 'Pick', 
   having count(*) < 8
   Order by count(*) DESC
 
-  /*For fun, bulding a parameterized query to show how many copies of a player are left*/
+  /*For fun, bulding a parameterized query to show how many copies of a player were chosen*/
 
   DECLARE @player VARCHAR(30) 
   Set @player = 'henry' --type any player name 
@@ -72,7 +72,7 @@ EXEC sp_RENAME 'mfl.dbo.draft6_15.[Draft Results For 1R DynastyPick]' , 'Pick', 
   group by selection
   having selection like CONCAT('%', @player, '%')
 
-  --Measuring the spread of picks(when first copy chosen vs last copy
+  --Measuring the spread of picks(when first copy chosen vs last copy) and looking at variance 
   select max(pick) - Min(pick), Selection from Draft6_15 group by Selection Order by max(pick) - Min(pick) DESC
   select STDEV(pick)[stdev], Selection from Draft6_15 group by Selection Order by STDEV(pick) DESC
 
